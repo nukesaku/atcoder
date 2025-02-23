@@ -6,14 +6,11 @@
     {
       "type": "cppbuild",
       "label": "g++ build active file",
-      "command": "/usr/local/bin/g++",
+      "command": "/bin/bash", // /usr/local/bin/g++ が direnv で設定されているため、bash で実行する
       "args": [
-          "-fdiagnostics-color=always",
-          "-g",
-          "${file}",
-          "-o",
-          "${fileDirname}/${fileBasenameNoExtension}"
-      ],
+        "-c", // -c オプションでコマンドを実行する
+        "cd ${workspaceFolder} && direnv exec . /usr/local/bin/g++ -fdiagnostics-color=always -g ${file} -o ${fileDirname}/${fileBasenameNoExtension}"
+      ], // direnv で設定された環境変数を利用して g++ を実行する
       "options": {
           "cwd": "${fileDirname}"
       },
