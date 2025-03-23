@@ -23,3 +23,4 @@ deactivate # 仮想環境(atcoder_env)の終了
 ## ショートカット類
 
 * F5: デバッグ実行
+* Ctrl + Option + N: Run Codeからgccを実行(デバッグしない)
